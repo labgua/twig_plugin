@@ -1,0 +1,22 @@
+{#
+	getsimple.html.twig - define the main information of the page with default getsimple values
+#}
+
+{% extends 'base.html.twig' %}
+
+{% block meta %}
+	<meta name="keywords" content="{{ page.meta_keywords }}" /> 
+	<meta name="desc" content="{{ meta_desc }}" />
+{% endblock %}
+
+{% block title %} {{ site.name }} - {{ page.title }} {% endblock %}
+
+{% block stylesheet %}
+	<link rel="stylesheet" type="text/css" href="{{ theme.url }}/asset/css/style.css">
+{% endblock %}
+
+{% block javascripts %}
+	<script type="text/javascript" src="{{ theme.url }}/asset/js/script.js" ></script>
+{% endblock %}
+
+{% block body %}{% endblock %}
