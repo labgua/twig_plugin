@@ -28,8 +28,18 @@
 			$this->theme_url = get_theme_url(false);
 			$this->site_url = get_site_url(false);
 			$this->site_name = get_site_name(false);
-			$this->site_menu = menu_data(null,false);
-			$this->menu = menu_data( $this->slug, false );
+			
+			$menuData = menu_data(null,false);
+			$this->site_menu = array(); 
+			$this->menu = array(); 
+			foreach ($menuData as $item ) {
+				if( $item["menu_status"] == "Y" ){
+					$this->site_menu[] = $item;
+				}
+				if( $item["parent_slug"] == $this->slug ){
+					$this->menu[] = $item;
+				}
+			}
 		}
 
 		public function export(){
