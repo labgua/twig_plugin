@@ -15,6 +15,7 @@
 		private $site_url;
 		private $site_name;
 		private $site_menu;
+		private $components;
 
 		function __construct() {
 			$this->slug = get_page_slug(false);
@@ -40,6 +41,15 @@
 					$this->menu[] = $item;
 				}
 			}
+			
+			$this->components = array();
+			$componentsData = getXML(GSDATAOTHERPATH.'components.xml');
+			$this->components[] = $componentsData->item;
+			$componentsData = $componentsData->item;
+			foreach ($componentsData as $component) {
+				$this->components[ $component->slug ] = $component->value; 
+			}
+			
 		}
 
 		public function export(){
@@ -62,7 +72,8 @@
 				),
 				"theme" => array(
 					"url" => $this->theme_url
-				)
+				),
+				"components" => $this->components
 			);
 		}
 
