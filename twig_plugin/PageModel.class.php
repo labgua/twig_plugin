@@ -43,11 +43,9 @@
 			}
 			
 			$this->components = array();
-			$componentsData = getXML(GSDATAOTHERPATH.'components.xml');
-			$this->components[] = $componentsData->item;
-			$componentsData = $componentsData->item;
+			$componentsData = getXML(GSDATAOTHERPATH.'components.xml');			
 			foreach ($componentsData as $component) {
-				$this->components[ $component->slug ] = $component->value; 
+				$this->components[ (string)$component->slug ] = (string)$component->value; 
 			}
 			
 		}
