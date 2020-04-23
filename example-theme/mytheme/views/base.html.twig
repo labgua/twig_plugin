@@ -6,11 +6,13 @@
 	<head>
 		{% block meta %}<meta charset="UTF-8" />{% endblock %}
 		<title>{% block title %}Welcome!{% endblock %}</title>
+		{{ _gs('get_header') }}
 		{% block stylesheets %}{% endblock %}
 		<link rel="icon" type="image/x-icon" href="favicon.ico" />
 	</head>
-	<body>
+	<body id="{{ _gs('get_page_slug') }}">
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
+		{{ _gs('get_footer') }}
 	</body>
 </html>
