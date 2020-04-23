@@ -2,9 +2,9 @@
 /*
 Plugin Name: Twig Plugin
 Description: Include Twig Engine for make simple themes
-Version: 1.3
+Version: 1.4
 Author: Sergio Guastaferro
-Author URI: https://www.linkedin.com/in/sergio-guastaferro-5826a171
+Author URI: https://www.linkedin.com/in/sergio-guastaferro/
 */
 
 //loading other dependencies
