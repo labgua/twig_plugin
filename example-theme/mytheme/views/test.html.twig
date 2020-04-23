@@ -2,12 +2,13 @@
 <html>
 <head>
 	<title>Test Template Twig!</title>
+	{{ _gs('get_header') }}
 </head>
-<body>
-	<h1>Home Template Twig</h1>
-	<p>This is a test that show all field of the page model</p>
+<body id="{{ _gs('get_page_slug') }}">
+	<h1>Test Template Twig!</h1>
+	<p>This tests that shows all fields of the page model and utilities</p>
 	<hr/>
-	<p>page</p>
+	<h2>Page</h2>
 	<p>---page.slug --- {{ page.slug }}</p>
 	<p>---page.meta_keywords --- {{ page.meta_keywords }}</p>
 	<p>---page.meta_desc --- {{ page.meta_desc }}</p>
@@ -23,7 +24,7 @@
 	</ul>
 	<hr/>
 
-	<p>site</p>
+	<h2>Site</h2>
 	<p>---site.url --- {{ site.url }}</p>
 	<p>---site.name --- {{ site.name }}</p>
 	<p>---site.menu --- {{ site.menu }}</p>
@@ -32,7 +33,15 @@
 	{% endfor %}
 	<hr/>
 
-	<p>theme</p>
+	<h2>Theme</h2>
 	<p>---theme.url --- {{ theme.url }}</p>
+	<hr/>
+
+	<h2>Calling GetSimple functions</h2>
+	<p>--- _gs('get_page_title') --- {{ _gs("get_page_title") }}</p>
+	<p>--- _gs('get_site_url') --- {{ _gs('get_site_url') }}</p>
+	<p>--- _gs('get_site_credits','Powered by ') --- {{ _gs('get_site_credits','Powered by ') }}</p>
+
+	{{ _gs('get_footer') }}
 </body>
 </html>
