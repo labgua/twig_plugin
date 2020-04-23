@@ -9,5 +9,5 @@
 	echo $template->render( $pageModel->export() );
 	*/
 
-	echo render('template.html.twig');
+	echo render('bootstrap.html.twig');
 ?>
